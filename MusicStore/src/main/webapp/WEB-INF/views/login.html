@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Music Store</title>
+</head>
+<body>
+	<div th:include="_header"></div>
+	
+	<form action="login" method="post">
+		<input type="text" placeholder="UserName" name="userName" required="true">
+		<input type="password" placeholder="PassWord" name="passWord" required="true">
+		<input type="submit">
+	</form>
+
+	<div th:include="_footer"></div>
+</body>
+</html>

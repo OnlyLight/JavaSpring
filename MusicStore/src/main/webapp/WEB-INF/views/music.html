@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Music Store</title>
+</head>
+<body>
+	<div th:include="_header"></div>
+	
+	<form action="/MusicStore/admin/music" method="post">
+		<input type="number" placeholder="Code" name="code" required="true">
+		<input type="text" placeholder="Name" name="name">
+		<input type="text" placeholder="Price" name="price">
+		<button name="add">Add</button>
+		<button name="edit">Edit</button>
+		<button name="delete">Delete</button>
+	</form>
+	
+	<table border="1">
+		<tr>
+			<th>Code</th>
+			<th>Name</th>
+			<th>Price</th>
+		</tr>
+		<div th:each="list : ${listProduct}">
+			<tr>
+				<td th:text="${list.code}"></td>
+				<td th:text="${list.name}"></td>
+				<td th:text="${list.price}"></td>
+			</tr>
+		</div>
+	</table>
+	
+	<div th:include="_footer"></div>
+</body>
+</html>

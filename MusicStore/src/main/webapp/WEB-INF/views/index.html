@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Music Store</title>
+</head>
+<body>
+	<div th:include="_header"></div>
+
+	<h2>Duy Store</h2>
+	<h3 th:if="${check}">Hello <span th:text="${done.userName}"/></h3>
+	<h3 th:unless="${check}">Welcome to Duy Store</h3>
+
+	<div>
+		<ul>
+			<li><a href="/MusicStore/product-list">Music List</a></li>
+			<li><a href="/MusicStore/admin">Admin pages</a></li>
+			<li><a href="/MusicStore/login">Login</a></li>
+			<li th:if="${check}"><a href="/MusicStore/logout">Logout</a></li>
+		</ul>
+	</div>
+	
+	<div th:include="_footer"></div>
+</body>
+</html>

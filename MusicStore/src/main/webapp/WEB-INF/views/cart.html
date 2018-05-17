@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Music Store</title>
+</head>
+<body>
+	<div th:include="_header"></div>
+	<div th:each="list : ${listProductBuy}">
+		<ul style="list-style-type: none">
+			<li th:text="${list.code}"></li>
+			<li th:text="${list.name}"></li>
+			<li th:text="${list.price}"></li>
+		</ul>
+		<button>Play</button>
+		<button>DownLoad</button>
+	</div>
+	<div th:include="_footer"></div>
+</body>
+</html>
