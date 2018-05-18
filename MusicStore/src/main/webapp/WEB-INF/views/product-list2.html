@@ -14,18 +14,28 @@
 </head>
 <body>
     <div class="container">
+        <!--Header-->
         <div th:include="_header2"></div>
+        <!--End Header-->
 
+        <!--Navi-Meunu-->
         <div th:include="navi-menu"></div>
+        <!--End Navi-Meunu-->
 
+        <!--Slider-->
         <div th:include="slider"></div>
+        <!--End Slider-->
 
-        <!--Introduce-->
         <div class="row">
             <div class="col-sm-8">
-                <h2 class="title">Introduce</h2>
-                <p class="my-p">A music store or musical instrument store is a retail business that sells musical instruments and related equipment and accessories.
-                    In United States and Canada, most music stores in the 2010s sell a range of electric instruments (e.g., electric guitars), instrument amplifiers (e.g., guitar amplifiers); electronic instruments (e.g., synthesizers); drum kits (including drums, cymbals and percussion instruments) and acoustic classical, concert band and jazz musical instruments such as saxophones, trumpets and violins.</p>
+                <h2 class="title">PlayList</h2>
+                <div class="list-group list-custom">
+                    <div th:each="list : ${list}">
+						<a th:href="@{'/buyProduct?code=' + ${list.code}}" class="list-group-item">
+							<span th:text="${list.name}"></span>
+						</a>
+					</div>
+                </div>
             </div>
 
             <div class="col-sm-4 pull-right">
@@ -51,6 +61,8 @@
         </div>
     </div>
 
+    <!--Footer-->
     <div th:include="_footer2"></div>
+    <!--End Footer-->
 </body>
 </html>

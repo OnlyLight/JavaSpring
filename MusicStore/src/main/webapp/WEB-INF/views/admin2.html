@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Store</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/music-store.css}">
+    <link th:href="@{/css/font-custom.css}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <script th:href="@{/scripts/jquery.min.js}"></script>
+    <script th:href="@{/scripts/bootstrap.min.js}"></script>
+    <script th:href="@{/scripts/music-store.js}"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+	<!-- Sidebar -->
+        <div th:include="sidebar"></div>
+    <!-- End Sidebar -->
+
+        <div class="col-lg-10" style="position: relative; left: 175px; width: 87%;">
+            <!--Header-->
+            <div th:include="header-admin"></div>
+            <!--End Header-->
+
+            <div style=" margin-left: 2rem">
+                <!--table info-->
+                <table class="table .table-striped">
+                    <tr>
+                        <th>Code</th>
+                        <th>NAME</th>
+                        <th>PRICE</th>
+                    </tr>
+
+                    <div th:each="list : ${listProduct}">
+						<tr>
+							<td th:text="${list.code}"></td>
+							<td th:text="${list.name}"></td>
+							<td th:text="${list.price}"></td>
+						</tr>
+					</div>
+                </table>
+            </div>
+
+            <!--Footer-->
+            	<div th:include="footer-admin"></div>
+            <!--End Footer-->
+        </div>
+    </div>
+</div>
+</body>
+</html>

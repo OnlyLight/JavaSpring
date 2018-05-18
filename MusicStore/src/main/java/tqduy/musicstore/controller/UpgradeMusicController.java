@@ -3,6 +3,7 @@ package tqduy.musicstore.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,7 +20,8 @@ public class UpgradeMusicController {
 	@RequestMapping()
 	public String viewMusic(ModelMap model, HttpServletRequest request) {
 		loadList(model);
-		return "music";
+		
+		return "music2";
 	}
 	
 	@RequestMapping(params="add", method=RequestMethod.POST)
@@ -27,7 +29,7 @@ public class UpgradeMusicController {
 		insert(model, request);
 		
 		loadList(model);
-		return "music";
+		return "music2";
 	}
 	
 	@RequestMapping(params="edit", method=RequestMethod.POST)
@@ -35,7 +37,7 @@ public class UpgradeMusicController {
 		edit(model, request);
 		
 		loadList(model);
-		return "music";
+		return "music2";
 	}
 	
 	@RequestMapping(params="delete", method=RequestMethod.POST)
@@ -43,7 +45,7 @@ public class UpgradeMusicController {
 		delete(model, request);
 		
 		loadList(model);
-		return "music";
+		return "music2";
 	}
 	
 	private void insert(ModelMap model, HttpServletRequest request) {

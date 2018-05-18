@@ -18,7 +18,7 @@ public class UpgradeUserController {
 	@RequestMapping()
 	public String viewMusic(ModelMap model, HttpServletRequest request) {
 		loadList(model);
-		return "user";
+		return "user2";
 	}
 	
 	@RequestMapping(params="addAccount", method=RequestMethod.POST)
@@ -26,7 +26,7 @@ public class UpgradeUserController {
 		insert(model, request);
 		
 		loadList(model);
-		return "user";
+		return "user2";
 	}
 	
 	@RequestMapping(params="editAccount", method=RequestMethod.POST)
@@ -34,7 +34,7 @@ public class UpgradeUserController {
 		edit(model, request);
 		
 		loadList(model);
-		return "user";
+		return "user2";
 	}
 	
 	@RequestMapping(params="deleteAccount", method=RequestMethod.POST)
@@ -42,7 +42,7 @@ public class UpgradeUserController {
 		delete(model, request);
 		
 		loadList(model);
-		return "user";
+		return "user2";
 	}
 	
 	private void insert(ModelMap model, HttpServletRequest request) {

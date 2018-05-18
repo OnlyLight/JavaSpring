@@ -1,0 +1,40 @@
+<div class="col-lg-2" style="position: fixed; top: 20px; left: -2rem">
+	<div class="main-sidebar">
+		<!-- sidebar: style can be found in sidebar.less -->
+		<section class="sidebar" style="height: auto;">
+			<!-- Sidebar user panel -->
+			<div class="user-panel">
+				<div class="pull-left image">
+					<img th:src="@{/images/Ariana8.gif}" class="img-circle"
+						alt="User Image">
+				</div>
+				<div class="pull-left info">
+					<p>Abarrane Emma</p>
+					<a href="/MusicStore/admin"><i class="fa fa-circle text-success"></i> Online</a>
+				</div>
+			</div>
+			<!-- search form -->
+			<form class="form-group slibar-form">
+				<div class="input-group">
+					<input type="text" name="q" class="form-control"
+						placeholder="Search..."> <span class="input-group-btn">
+						<button type="submit" name="search" id="search-btn"
+							class="btn btn-flat">
+							<i class="fa fa-search"></i>
+						</button>
+					</span>
+				</div>
+			</form>
+
+			<!--main menu-->
+			<ul class="slibar-menu" style="height: 533px">
+				<li class="header">MAIN NAVIGATION</li>
+				<li class="slibar-item"><a href="/MusicStore/admin/music"><i
+						class="fa fa-music" aria-hidden="true"></i>&nbsp; Music</a></li>
+				<li class="slibar-item"><a href="/MusicStore/admin/user"><i
+						class="fa fa-user" aria-hidden="true"></i>&nbsp; User</a></li>
+			</ul>
+		</section>
+		<!-- /.sidebar -->
+	</div>
+</div>

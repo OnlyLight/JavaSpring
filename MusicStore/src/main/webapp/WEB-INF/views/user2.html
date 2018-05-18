@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Store</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/music-store.css}">
+    <link th:href="@{/css/font-custom.css}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <script th:href="@{/scripts/jquery.min.js}"></script>
+    <script th:href="@{/scripts/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+	<!-- Sidebar -->
+        <div th:include="sidebar"></div>
+    <!-- End Sidebar -->
+
+        <div class="col-lg-10" style="position: relative; left: 175px; width: 87%;">
+            <!--Header-->
+            <div th:include="header-admin"></div>
+            <!--End Header-->
+
+            <div style=" margin-left: 2rem">
+                <form action="/MusicStore/admin/user" method="post" style="margin-bottom: 2rem;">
+                    <div class="form-group">
+                        <label>ID:</label>
+                        <input type="number" placeholder="Code" name="id" required="true" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>UserName:</label>
+                        <input type="text" placeholder="UserName" name="userName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>PassWord:</label>
+                        <input type="text" placeholder="PassWord" name="passWord" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Role:</label>
+                        <input type="text" placeholder="Role" name="role" class="form-control">
+                    </div>
+                    <button name="addAccount" class="btn btn-default">Add</button>
+                    <button name="editAccount" class="btn btn-primary" onclick="confirm('Do you want edit')">Edit</button>
+                    <button name="deleteAccount" class="btn btn-danger" onclick="confirm('Do you want delete')">Delete</button>
+                </form>
+                <!--table info-->
+                <table class="table .table-striped">
+                    <tr>
+                        <th>ID</th>
+						<th>USERNAME</th>
+						<th>PASSWORD</th>
+						<th>ROLE</th>
+                    </tr>
+
+                    <div th:each="list : ${listAccount}">
+						<tr>
+							<td th:text="${list.id}"></td>
+							<td th:text="${list.userName}"></td>
+							<td th:text="${list.passWord}"></td>
+							<td th:text="${list.role}"></td>
+						</tr>
+					</div>
+                </table>
+            </div>
+
+            <!--Footer-->
+            	<div th:include="footer-admin"></div>
+            <!--End Footer-->
+        </div>
+    </div>
+</div>
+</body>
+</html>

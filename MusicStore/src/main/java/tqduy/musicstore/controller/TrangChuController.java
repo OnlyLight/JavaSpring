@@ -32,14 +32,14 @@ public class TrangChuController {
 			System.out.println("Check Login: true");
 		}
 		
-		return "index";
+		return "index2";
 	}
 	
 	@RequestMapping("/product-list")
 	public String viewProduct(ModelMap model) {
 		List<Product> listProduct = new ProductDAOImp().getListProduct();
 		model.addAttribute("list", listProduct);
-		return "product-list";
+		return "product-list2";
 	}
 	
 	@RequestMapping("/admin")
@@ -51,10 +51,19 @@ public class TrangChuController {
 		System.out.println("Account Staff: " + accountLogin);
 		
 		if(accountLogin == null) {
-			return "login";
+			model.addAttribute("check", false);
+			System.out.println("Check Login: false");
+		} else {
+			model.addAttribute("check", true);
+			model.addAttribute("done", accountLogin);
+			System.out.println("Check Login: true");
+		}
+		
+		if(accountLogin == null) {
+			return "login2";
 		}
 		else if(accoutAdmin != null) {
-			return "admin";
+			return "admin2";
 		} else {
 			return "redirect:/";
 		}
@@ -67,7 +76,7 @@ public class TrangChuController {
 			list = new ProductDAOImp().findProduct(code);
 		}
 		model.addAttribute("listProductBuy", list);
-		return "cart";
+		return "cart2";
 	}
 	
 	@RequestMapping("/login")
@@ -90,14 +99,14 @@ public class TrangChuController {
 		
 		if(!accountDAOImp.checkUser(account)) {
 			System.out.println("login check !!");
-			return "login";
+			return "login2";
 		}
 		
 		session.setAttribute("loginDone", account);
 		System.out.println("UserName Admin: " + userName + " - Pass: " + passWord);
 		if(accountDAOImp.checkUserAdmin(account)) {
 			session.setAttribute("loginAdmin", account);
-			return "admin";
+			return "admin2";
 		}
 		
 		return "redirect:/";
@@ -109,7 +118,7 @@ public class TrangChuController {
 		Account accoutLogin = (Account) session.getAttribute("loginDone");
 		
 		if(accoutLogin == null) {
-			return "login";
+			return "login2";
 		} else {
 			session.removeAttribute("loginAdmin");
 			session.removeAttribute("loginDone");
