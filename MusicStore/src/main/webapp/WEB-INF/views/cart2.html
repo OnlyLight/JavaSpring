@@ -30,41 +30,30 @@
             <div class="col-sm-8">
                 <h2 class="title">PlayList</h2>
                 <div class="row">
-                	<div class="col-sm-2">
-                		<div th:each="list : ${listProductBuy}">
-							<div class="title" style="font-size: 2rem; margin: 2rem 0;">
+                	<div th:each="list : ${listProductBuy}">
+						<div class="col-sm-2">
+	                		<div class="title" style="font-size: 2rem; margin: 2rem 0;">
 								<span style="text-decoration: underline; font-style: italic;">Code:</span> <span th:text="${list.code}"></span> <br/>
 								<span style="text-decoration: underline; font-style: italic;">Name:</span> <span th:text="${list.name}"></span> <br/>
 								<span style="text-decoration: underline; font-style: italic;">List:</span> <span th:text="${list.price}"></span>
 							</div>
-						</div>
-                	</div>
-                	<div class="col-sm-10">
-                		<iframe width="560" height="315" src="https://www.youtube.com/embed/32sYGCOYJUM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                	</div>
+	                	</div>
+	                	<div class="col-sm-10">
+	                		<iframe width="560" height="315" th:src="${list.url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	                	</div>
+					</div>
+					<button class="btn btn-danger" th:if="${check}" onclick="alert('DOWNLOADING....')">
+						<a style="text-decoration: none; color: inherit;" href="/MusicStore/download">DOWNLOAD</a>
+					</button>
+					<button class="btn btn-danger" th:unless="${check}">
+						<a style="text-decoration: none; color: inherit;" href="/MusicStore/download">DOWNLOAD</a>
+					</button>
                 </div>
             </div>
 
-            <div class="col-sm-4 pull-right">
-                <h4 class="title">HOT THEME</h4>
-                <ul class="ul-theme">
-                    <li>
-                        <a href="/MusicStore/product-list">
-                            <img class="img-theme" th:src="@{/images/music-love.jpg}" alt="music-love">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/MusicStore/product-list">
-                            <img class="img-theme" th:src="@{/images/hits.png}" alt="music-love">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/MusicStore/product-list">
-                            <img class="img-theme" th:src="@{/images/acoustic.jpg}" alt="music-love">
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <!--Hot Theme-->
+		    <div th:include="hot-theme"></div>
+		    <!--End Hot Theme-->
         </div>
     </div>
 

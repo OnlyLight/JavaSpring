@@ -20,7 +20,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a th:if="${check}" href="/MusicStore/login"><span
 								class="glyphicon glyphicon-user"></span> HI, <span
-								th:text="${done.userName}"></span></a></li>
+								th:text="${done.userName}" style="text-transform: capitalize;"></span></a></li>
 						<li><a th:unless="${check}" href="/MusicStore/login"><span
 								class="glyphicon glyphicon-log-in"></span> Login</a></li>
 						<li><a th:if="${check}" href="/MusicStore/logout"><span

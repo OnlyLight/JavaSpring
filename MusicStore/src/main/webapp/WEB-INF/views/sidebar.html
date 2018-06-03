@@ -9,7 +9,7 @@
 						alt="User Image">
 				</div>
 				<div class="pull-left info">
-					<p>Abarrane Emma</p>
+					<div th:if="${check}">Hi, <span th:text="${done.userName}" style="text-transform: capitalize;">Abarrane Emma</span></div>
 					<a href="/MusicStore/admin"><i class="fa fa-circle text-success"></i> Online</a>
 				</div>
 			</div>

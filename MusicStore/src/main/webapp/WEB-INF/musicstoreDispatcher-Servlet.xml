@@ -26,6 +26,10 @@
 		class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
 		<property name="templateEngine" ref="engine" />
 	</bean>
+	
+	<bean name="productDAO" class="tqduy.musicstore.dao.imp.ProductDAOImp"></bean>
+	
+	<bean name="accountDAO" class="tqduy.musicstore.dao.imp.AccountDAOImp"></bean>
 
 	<!-- Cấu hình cho phép sử dụng Spring MVC Annotation -->
 	<mvc:annotation-driven />

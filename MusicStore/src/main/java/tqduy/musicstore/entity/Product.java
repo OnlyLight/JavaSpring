@@ -17,14 +17,18 @@ public class Product {
 	
 	@Column(name="Price", nullable = false)
 	private float price;
+	
+	@Column(name="URL")
+	private String url;
 
 	public Product() {
 	}
 
-	public Product(int code, String name, float price) {
+	public Product(int code, String name, float price, String url) {
 		this.code = code;
 		this.name = name;
 		this.price = price;
+		this.url = url;
 	}
 
 	public int getCode() {
@@ -49,5 +53,13 @@ public class Product {
 
 	public void setPrice(float price) {
 		this.price = price;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 }

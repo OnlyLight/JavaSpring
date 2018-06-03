@@ -9,7 +9,6 @@ import org.hibernate.query.Query;
 
 import tqduy.musicstore.dao.AccountDAO;
 import tqduy.musicstore.entity.Account;
-import tqduy.musicstore.entity.Product;
 import tqduy.musicstore.utils.HiberneteUtils;
 
 public class AccountDAOImp implements AccountDAO {

@@ -34,17 +34,19 @@
                         <input type="text" placeholder="UserName" name="userName" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>PassWord:</label>
-                        <input type="text" placeholder="PassWord" name="passWord" class="form-control">
+                        <label>Password:</label>
+                        <input type="text" placeholder="Password" name="passWord" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Role:</label>
-                        <input type="text" placeholder="Role" name="role" class="form-control">
+                        <label>Role:</label><br />
+                        <label>Admin <input type="radio" name="role" class="form-control" value="admin"></label>
+                        <label style="padding-left: 2rem">Staff <input type="radio" name="role" class="form-control" value="staff"></label>
                     </div>
                     <button name="addAccount" class="btn btn-default">Add</button>
                     <button name="editAccount" class="btn btn-primary" onclick="confirm('Do you want edit')">Edit</button>
                     <button name="deleteAccount" class="btn btn-danger" onclick="confirm('Do you want delete')">Delete</button>
                 </form>
+                <p th:if="${checkError}"><span th:text="${error}" style="color: red; font-weight: bold;"></span></p>
                 <!--table info-->
                 <table class="table .table-striped">
                     <tr>

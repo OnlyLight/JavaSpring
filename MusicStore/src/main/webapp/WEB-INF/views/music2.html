@@ -37,16 +37,22 @@
                         <label>Price:</label>
                         <input type="text" placeholder="Price" name="price" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <label>URL:</label>
+                        <input type="text" placeholder="URL" name="url" class="form-control">
+                    </div>
                     <button name="add" class="btn btn-default">Add</button>
                     <button name="edit" class="btn btn-primary" onclick="confirm('Do you want edit')">Edit</button>
                     <button name="delete" class="btn btn-danger" onclick="confirm('Do you want delete')">Delete</button>
                 </form>
+                <p th:if="${checkError}"><span th:text="${error}" style="color: red; font-weight: bold;"></span></p>
                 <!--table info-->
                 <table class="table .table-striped">
                     <tr>
                         <th>Code</th>
                         <th>NAME</th>
                         <th>PRICE</th>
+                        <th>URL</th>
                     </tr>
 
                     <div th:each="list : ${listProduct}">
@@ -54,6 +60,7 @@
 							<td th:text="${list.code}"></td>
 							<td th:text="${list.name}"></td>
 							<td th:text="${list.price}"></td>
+							<td th:text="${list.url}"></td>
 						</tr>
 					</div>
                 </table>
